@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    text-align: center;
+    
+
+}
+.todos {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 3rem;
+    align-items: center;
+
+}
+.todo {
+    display: flex;
+    flex-direction: row;
+    
+}
