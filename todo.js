@@ -3,6 +3,7 @@ let todoInput = document.querySelector(".todoEnter > input")
 let priority = document.querySelector("#priority")
 let addButton = document.querySelector(".todoEnter button")
 let newId = 1
+let data = []
 // let data = [
 //     {
 //         "id": 1,
@@ -40,16 +41,29 @@ const deleteTodo = (e) =>{
     let id = e.target.closest(".todo").querySelector("p").innerText
     let newData = data.filter((todo)=> todo.id  != id )
     addStorage(newData)
-    showToDos(getStorage())
+    data = getStorage()
+    data = showToDos(getStorage())
+    showToDos(data)
     
 
 }
 
+const toDoUpdate = (e) => {
+    
+}
+
 addButton.addEventListener("click",()=>{
     createTodo()
-    getStorage()
-    showToDos(data)
+    showToDos(getStorage())
 })
 //first run
-let data = getStorage()
+ data = getStorage()
 showToDos(data)
+
+
+
+
+
+
+
+//// IS DONE UPDATE EDILECEK DEADLINE BELIRLENECEK
