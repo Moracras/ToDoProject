@@ -2,7 +2,7 @@ let todosClass = document.querySelector(".todos")
 let todoInput = document.querySelector(".todoEnter > input")
 let priority = document.querySelector("#priority")
 let addButton = document.querySelector(".todoEnter button")
-let newId = 1
+let newId = 0
 let data = []
 // let data = [
 //     {
@@ -11,6 +11,12 @@ let data = []
 //         "isDone": false,
 //         "priority": "high"
 //     },]
+const addStorage = (data) => {
+    localStorage.todos = JSON.stringify(data)
+}
+const getStorage = () => {
+    return JSON.parse(localStorage.todos)
+}
 const showToDos = (data) =>{
     todosClass.innerHTML =" "
     data.forEach((todo)=>{
@@ -18,46 +24,38 @@ const showToDos = (data) =>{
         <p>${todo.id}</p>
         <p>${todo.todo}</p>
         <p>${todo.priority}</p>
-        <button>delete</button>
+        <button onclick ="deleteTodo(event)" >delete</button>
     </div>`
 
     })
 }
-const addStorage = (data) => {
-    sessionStorage.todos = JSON.stringify(data)
-}
-const getStorage = (data) =>{
-
-}
-
 const createTodo = () => {
     newId++
     let todoData ={id:newId,todo:todoInput.value ,isDone:false, priority:priority.value}
     data.push(todoData)
-    showToDos(data)
+    addStorage(data)
 }
 
 const deleteTodo = (e) =>{
     let id = e.target.closest(".todo").querySelector("p").innerText
     let newData = data.filter((todo)=> todo.id  != id )
-    addStorage(newData)
-    data = getStorage()
-    data = showToDos(getStorage())
+    data = newData
+    addStorage(data)
     showToDos(data)
     
 
 }
 
-const toDoUpdate = (e) => {
+// const toDoUpdate = (e) => {
     
-}
+// }
 
 addButton.addEventListener("click",()=>{
     createTodo()
     showToDos(getStorage())
 })
 //first run
- data = getStorage()
+data = getStorage()
 showToDos(data)
 
 
