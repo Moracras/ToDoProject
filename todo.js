@@ -46,9 +46,10 @@ const deleteTodo = (e) =>{
 
 }
 
-// const toDoUpdate = (e) => {
+const toDoUpdate = (e) => {
     
-// }
+    
+ }
 
 addButton.addEventListener("click",()=>{
     createTodo()
