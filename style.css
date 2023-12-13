@@ -2,6 +2,14 @@
     margin: 0;
     box-sizing: border-box;
 }
+body{   
+    background: url(https://avatars.mds.yandex.net/i?id=425efddd95d234c92bb4ba8416d1b025d48223f6-10783551-images-thumbs&n=13);
+    #backgroundimg{
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    
+}
 
 .container {
     text-align: center;
@@ -19,6 +27,9 @@
 .todo {
     display: flex;
     flex-direction: row;
+    background-color: #FFFDD0;
+    color: aqua;
+  
     & p{
         border:1px black solid;
         margin: 3px;
@@ -30,5 +41,18 @@
     & p:nth-child(3){
         width: 2rem;
     }
-    
+} 
+.removing{
+        color: aqua;
+ }
+h1{
+    color: rgb(255, 139, 7);
 }
+label{
+    color:  rgb(255, 139, 7);
+    color: #FFFDD0;
+    color: turquoise;
+    color: beige;
+    color: greenyellow;
+}
+    
